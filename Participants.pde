@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 class Participants {
 
@@ -65,13 +64,6 @@ class Participants {
     strokeWeight(1);
     noStroke();
 
-    String[] countryNames = {
-      "russia", "saudi-arabia", "egypt", "uruguay",
-      "portugal", "spain", "morocco", "iran",
-      "france", "australia", "peru", "denmark",
-      "argentina", "iceland", "croatia", "nigeria"
-    };
-
     int[] xPositions = {55, 555};  // To kolonner for x positioner
     int[] yPositions = {75, 130, 185, 240, 350, 405, 460, 515}; // 8 forskellige rækker på y-aksen
 
@@ -79,11 +71,11 @@ class Participants {
 
     for (int x = 0; x < 2; x++) { //Kører på 2 kolonner
       for (int y = 0; y < 8; y++) { // Kører på 8 rækker
-        if (countryIndex >= countryNames.length) {
+        if (countryIndex >= countries.length) {
           break; // If statement for at undgå out-of-bounds, break for at gå videre
         } else {
           
-          String filename = "Flags/" + countryNames[countryIndex] + ".png"; //Sætter filnavnet i en string
+          String filename = "Flags/" + countries[countryIndex] + ".png"; //Sætter filnavnet i en string
           PImage flag = loadImage(filename);
           flag.resize(90, 51); //Indstiller størrelsen
           image(flag, xPositions[x], yPositions[y]); //Loader billedet på position ud fra x/y arrays ovenover på given plads ud fra for-loopet
